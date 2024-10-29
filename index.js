@@ -1,8 +1,8 @@
-require('dotenv').config(); // Load environment variables
+require("dotenv").config(); // Load environment variables
 
-const express = require('express');
-const connectDB = require('./DB/dbConnection'); // Import the DB connection
-const helloRoutes = require('./routes/helloRoutes');
+const express = require("express");
+const connectDB = require("./DB/dbConnection"); // Import the DB connection
+const helloRoutes = require("./routes/helloRoutes");
 
 const app = express();
 const PORT = process.env.PORT || 2000;
@@ -11,9 +11,9 @@ const PORT = process.env.PORT || 2000;
 connectDB();
 
 // Use the API route prefix
-app.use('/api', helloRoutes);
+app.use("/api", helloRoutes);
 
 // Start the server
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
